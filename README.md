@@ -13,7 +13,7 @@ Navigate to the root directory of this repository with command line and run
 
     npm start
 
-Open (localhost:1080)[http://localhost:1080/] for the admin interface
+Open [localhost:1080](http://localhost:1080/) for the admin interface
 
 ## Modifications
 
