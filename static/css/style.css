@@ -1,0 +1,17 @@
+
+.timer-stopped {
+    color: red;
+}
+
+.timer-started {
+    color: green;
+}
+
+.timer-blink-0 {
+    color: green;
+}
+
+.timer-blink-1 {
+    color: white;
+}
+

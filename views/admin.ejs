@@ -1,0 +1,83 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Scoreboard Admin</title>
+    <script data-main="js/admin" src="/js/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+
+    <fieldset>
+        <legend>Create Scoreboard</legend>
+        <table>
+            <tr>
+                <td>Start time</td>
+                <td><input type="text" id="start-time" placeholder="00:00" /></td>
+            </tr>
+            <tr>
+                <td>End time</td>
+                <td><input type="text" id="end-time" placeholder="00:00" /></td>
+            </tr>
+            <tr>
+                <td>&nbsp;</td>
+                <td><input type="button" id="generate-button" value="Create Scoreboard" onclick="generate()" /></td>
+            </tr>
+        </table>
+    </fieldset>
+
+    <p><a href="/client" target="_blank">Open Scoreboard Client</a></p>
+
+    <fieldset>
+        <legend>Scoreboard</legend>
+
+        <pore>Note: <code id="message">First quarter</code> (<a href="#" onclick="changeMessage(); return false;">change</a>)</p>
+
+        <fieldset>
+            <legend>Timer</legend>
+            <p id="current-time" class="timer-stopped">00:00</p>
+            <p>
+                <input type="button" value="← 10 s." onclick="incrCurrentTime(-10)" />
+                <input type="button" value="← 1 s." onclick="incrCurrentTime(-1)" />
+
+                <input type="button" value="Set current time" onclick="setCurrentTime()" />
+
+                <input type="button" value="1 s. →" onclick="incrCurrentTime(1)" />
+                <input type="button" value="10 s. →" onclick="incrCurrentTime(10)" />
+            </p>
+            <p>
+                <input type="button" value="Start" onclick="toggleTimer(true)" />
+                <input type="button" value="Stop" onclick="toggleTimer(false)" />
+            </p>
+        </fieldset>
+
+        <fieldset>
+            <legend>Score</legend>
+
+            <fieldset>
+                <legend><span id="name-home">Home</span> (<a href="#" onclick="changeName('home'); return false;">change</a>)</legend>
+                <p id="score-home">0</p>
+                <p>
+                    <input type="button" value="Set score" onclick="setScore('home');"/>
+                    <input type="button" value="+1" onclick="incrScore('home', 1);"/>
+                    <input type="button" value="+2" onclick="incrScore('home', 2);"/>
+                    <input type="button" value="+3" onclick="incrScore('home', 3);"/>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend><span id="name-visitors">Visitors</span> (<a href="#" onclick="changeName('visitors'); return false;">change</a>)</legend>
+                <p id="score-visitors">0</p>
+                <p>
+                    <input type="button" value="Set score" onclick="setScore('visitors');"/>
+                    <input type="button" value="+1" onclick="incrScore('visitors', 1);"/>
+                    <input type="button" value="+2" onclick="incrScore('visitors', 2);"/>
+                    <input type="button" value="+3" onclick="incrScore('visitors', 3);"/>
+                </p>
+            </fieldset>
+
+        </fieldset>
+    </fieldset>
+
+</body>
+</html>
